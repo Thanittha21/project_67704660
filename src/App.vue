@@ -24,12 +24,13 @@
             <li><a class="dropdown-item" href="#">Login</a></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Register</a></li>
+            <li><a class="dropdown-item" href="/add_customer">Register</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
         </li>
+         
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
