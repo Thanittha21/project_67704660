@@ -28,12 +28,19 @@
             <li><a class="dropdown-item" href="#">Logout</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/add_customer">Register</a></li>
+            <li><a class="dropdown-item" href="/add_student">Register</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
         </li>
-         
+          <li class="nav-item">
+          <a class="nav-link" href="/student">Student</a>
+        </li>
+
+
+
+
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
