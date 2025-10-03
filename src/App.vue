@@ -13,11 +13,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/ShowProduct">Show Product</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/customer">Customer</a>
-        </li>
+    
         <li class="nav-item">
           <a class="nav-link" href="/product">Product</a>
+
+
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -27,8 +27,22 @@
             <li><a class="dropdown-item" href="#">Login</a></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/add_customer">Register</a></li>
+          
             <li><a class="dropdown-item" href="/add_student">Register</a></li>
+          </ul>
+        </li>
+
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Customer
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/customer">Customer</a></li>
+            <li><a class="dropdown-item" href="/customer_edit">EditCustomer</a></li>
+            
+            
+            
           </ul>
         </li>
         <li class="nav-item">
@@ -37,9 +51,10 @@
           <li class="nav-item">
           <a class="nav-link" href="/student">Student</a>
         </li>
+      
 
 
-
+         
 
       </ul>
       <form class="d-flex" role="search">

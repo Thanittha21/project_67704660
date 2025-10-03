@@ -47,7 +47,11 @@ const routes = [
     name: 'add_student',
     component: () => import('../views/Add_student.vue')
   },
-
+{
+    path: '/customer_edit',
+    name: 'customer_edit',
+    component: () => import('../views/Customer_edit.vue')
+  },
 
 
 
