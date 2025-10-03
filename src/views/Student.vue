@@ -122,7 +122,7 @@ const editStudent = ref({});   //เพิ่ม
     // ฟังก์ชันดึงข้อมูลจาก API ด้วย GET
     const fetchStudents = async () => {
       try {
-        const response = await fetch("http://localhost/project_67704660/api_php/api_student.php", {
+        const response = await fetch("http://localhost/project_67704660/api_php/student_crud.php", {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -162,7 +162,7 @@ const modalEl = document.getElementById("editModal");     //เพิ่ม
 // เพิ่มฟังก์ชั่นการแก้ไขข้อมูล ***
     const updateStudent = async () => {
       try {
-        const response = await fetch("http://localhost/project_67704660/api_php/student_php", {
+        const response = await fetch("http://localhost/project_67704660/api_php/student_crud.php", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(editStudent.value)
@@ -188,7 +188,7 @@ const deleteStudent = async (id) => {
   if (!confirm("คุณต้องการลบข้อมูลนี้ใช่หรือไม่?")) return;
 
   try {
-    const response = await fetch("http://localhost/project_67704660/api_php/api_student.php", {
+    const response = await fetch("http://localhost/project_67704660/api_php/student_crud.php", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
