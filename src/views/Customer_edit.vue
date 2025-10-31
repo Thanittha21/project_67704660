@@ -163,7 +163,7 @@ export default {
       if (!confirm("คุณต้องการลบข้อมูลนี้ใช่หรือไม่?")) return;
 
       try {
-        const response = await fetch("http://localhost/project_41970137_week3/php_api/api_customer.php", {
+        const response = await fetch("http://localhost/project_67704660/api_php/api_customer.php", {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ customer_id: id })

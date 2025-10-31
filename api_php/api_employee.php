@@ -9,7 +9,7 @@ try {
 
     if ($method === "GET") {
         // ✅ ดึงข้อมูลลูกค้าทั้งหมด
-        $stmt = $conn->prepare("SELECT customer_id, firstName, lastName, phone, username FROM customers ORDER BY customer_id DESC");
+        $stmt = $conn->prepare("SELECT * FROM employee ORDER BY employee_id DESC");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -20,16 +20,18 @@ elseif ($method === "POST") {
         // ✅ เพิ่มข้อมูลลูกค้าใหม่
         $data = json_decode(file_get_contents("php://input"), true);
 
-        $password_01  = password_hash($data["password"], PASSWORD_BCRYPT);  //เข้ารหัส password 
+       
 
-        $stmt = $conn->prepare("INSERT INTO customers (firstName, lastName, phone, username,password) 
-                                VALUES (:firstName, :lastName, :phone, :username, :password)");
-
-        $stmt->bindParam(":firstName", $data["firstName"]);
-        $stmt->bindParam(":lastName", $data["lastName"]);
-        $stmt->bindParam(":phone", $data["phone"]);
+        $stmt = $conn->prepare("INSERT INTO employees (employee_id,first_name,last_name,username, password) 
+                                VALUES (:employee_id,:first_name,:last_name,:username,:password)");
+                                
+        $stmt->bindParam(":student_id", $data["student_id"]);
+        $stmt->bindParam(":first_name", $data["first_name"]);
+        $stmt->bindParam(":last_name", $data["last_name"]);
         $stmt->bindParam(":username", $data["username"]);
-        $stmt->bindParam(":password",  $password_01);
+        $stmt->bindParam(":password", $data["password"]);
+ 
+    
 
         if ($stmt->execute()) {
             echo json_encode(["success" => true, "message" => "เพิ่มข้อมูลเรียบร้อย"]);
@@ -41,18 +43,18 @@ elseif ($method === "POST") {
 
 //ลบข้อมูล
     elseif ($method === "DELETE") {
-        // ✅ ลบข้อมูลลูกค้าตาม customer_id
+        // ✅ ลบข้อมูลลูกค้าตาม 
         $data = json_decode(file_get_contents("php://input"), true);
 
-        if (!isset($data["customer_id"])) {
-            echo json_encode(["success" => false, "message" => "ไม่พบค่า customer_id"]);
+        if (!isset($data["employee_id"])) {
+            echo json_encode(["success" => false, "message" => "ไม่พบค่า employee_id"]);
             exit;
         }
 
-        $customer_id = intval($data["customer_id"]);
+        $student_id = intval($data["employee_id"]);
 
-        $stmt = $conn->prepare("DELETE FROM customers WHERE customer_id = :id");
-        $stmt->bindParam(":id", $customer_id, PDO::PARAM_INT);
+        $stmt = $conn->prepare("DELETE FROM employees WHERE employee_id = :id");
+        $stmt->bindParam(":id", $employee_id, PDO::PARAM_INT);
 
         if ($stmt->execute()) {
             echo json_encode(["success" => true, "message" => "ลบข้อมูลเรียบร้อย"]);
